@@ -1,6 +1,8 @@
 import express from 'express';
 import db from './model/index.js';
-import { routeProduto } from './routes/produto.routes.js';
+// import { routeProduto } from './routes/produto.routes.js';
+// import { routeUsuario } from './routes/usuario.routes.js';
+import { routePraca } from './routes/praca.routes.js';
 import cors from "cors";
 
 export const app = express();
@@ -19,10 +21,12 @@ db.connection.sync()
 
 
 app.get('/',(request,response)=>{
-    response.status(200).json({mensage:"Oi, o server tá on..."})
+    response.status(200).json({mensage:"Hi, this server is on..."})
 })
 
-routeProduto(app)
+// routeProduto(app)
+// routeUsuario(app)
+routePraca(app)
 
 const host = process.env.PGHOST || 'localhost';
 const port = 5000;

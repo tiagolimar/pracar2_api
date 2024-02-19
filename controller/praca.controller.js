@@ -26,7 +26,7 @@ export const pracaController = {
         })
     },  
 
-    findAll: (request,response)=>{
+    findAll: (_,response)=>{
         Praca.findAll()
         .then(data=>{
             response.send(data);

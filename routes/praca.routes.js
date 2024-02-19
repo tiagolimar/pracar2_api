@@ -6,8 +6,7 @@ export const routePraca = ()=>{
     const router = express.Router();
 
     router.post('/praca/cadastrar', pracaController.cadastrar)
-    router.get('/pracas', pracaController.findAll)
-    router.get('/praca/id/:id', pracaController.findById)
+    router.get('/praca/login', pracaController.login)
     router.patch('/praca/id/:id', pracaController.update)
     router.delete('/praca/id/:id', pracaController.deleteById)
     router.delete('/pracas', pracaController.deleteALL)

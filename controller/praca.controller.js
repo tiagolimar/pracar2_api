@@ -3,48 +3,63 @@ import bcrypt from 'bcryptjs';
 
 const Praca = db.praca;
 
+function gerarToken(){
+    return 'Av31jlI4upO'
+}
+
 export const pracaController = {
     cadastrar: async (request,response)=>{
         const {nome, senha} = request.body;
-        const token = "";
 
         if(!(nome || senha)){
-            res.status(400).send({
+            response.status(400).send({
                 message:"O nome e a senha não podem ser campos vazios."
             })
         }
 
+        const dados = await Praca.findAll({where:{nome:nome}});
+
+        if(dados){
+            response.status(400).send({
+                message:"Já existe uma praça com esse nome."
+            })
+        }
+
         const senha_encriptada = await bcrypt.hash(senha, 10);
+        const token = gerarToken()
         const praca = {nome:nome,senha:senha_encriptada,token:token}
-        console.log(praca);
+
         Praca.create(praca)
-        .then(data=>{
-            response.send(data);
+        .then(dados=>{
+            response.send(dados);
         })
         .catch(e=>{
             response.status(500).send({message : e.message || "Não foi possível finalizar o cadastro."});
         })
-    },  
-
-    findAll: (_,response)=>{
-        Praca.findAll()
-        .then(data=>{
-            response.send(data);
-        })
-        .catch(e=>{
-            response.status(500).send({message : e.message || "Can't get products."});
-        })
     },
 
-    findById: (request,response)=>{
-        const id = request.params.id
-        Praca.findByUk(id)
-        .then(data=>{
-            response.send(data);
-        })
-        .catch(e=>{
-            response.status(500).send({message : e.message || `Can't get product ${id}.`});
-        })
+    login: async (request,response)=>{
+        const {nome, senha} = request.body;
+
+        let dados = await Praca.findAll({where:{nome:nome}})
+        dados = dados[0]
+
+        if (dados){
+            const senhasConferem = await bcrypt.compare(senha, dados.senha)
+
+            if (senhasConferem){
+                response.send(dados);
+            }else{
+                response.status(400).send({
+                    message:"O nome ou a senha não conferem."
+                })
+            }
+        }else{
+            response.status(400).send({
+                message:"O nome ou a senha não conferem."
+            })
+        }
+        response.status(500).send({message:dados.message || "Não foi possível verificar o nome e a senha."});
     },
 
     update: async (request,response)=>{

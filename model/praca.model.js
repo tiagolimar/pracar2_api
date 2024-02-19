@@ -4,14 +4,15 @@ export const pracaModel = connection => {
     const Praca = connection.define('tb_pracas',{
         nome:{
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
         senha:{
             type: DataTypes.STRING,
             allowNull: false
         },
         token:{
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
         },
     })
     return Praca

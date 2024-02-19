@@ -5,7 +5,7 @@ import {app} from "../index.js"
 export const routePraca = ()=>{
     const router = express.Router();
 
-    router.post('/praca', pracaController.create)
+    router.post('/praca/cadastrar', pracaController.cadastrar)
     router.get('/pracas', pracaController.findAll)
     router.get('/praca/id/:id', pracaController.findById)
     router.patch('/praca/id/:id', pracaController.update)

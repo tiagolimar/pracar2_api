@@ -3,14 +3,14 @@ import db from '../model/index.js';
 const Praca = db.praca;
 
 export const pracaController = {
-    create: (request,response)=>{
+    cadastrar: (request,response)=>{
         if(!request.body.nome){
             res.status(400).send({
                 message:"Name must no void"
             })
         }
         const praca = request.body;
-        praca.create(praca)
+        Praca.create(praca)
         .then(data=>{
             response.send(data);
         })

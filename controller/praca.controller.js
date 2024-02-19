@@ -1,26 +1,32 @@
-import db from '../model/index.js';
+import db from '../model';
+import bcrypt from 'bcryptjs';
 
 const Praca = db.praca;
 
 export const pracaController = {
-    cadastrar: (request,response)=>{
-        if(!request.body.nome){
+    cadastrar: async (request,response)=>{
+        const {nome, senha} = request.body;
+        const token = "";
+
+        if(!(nome || senha)){
             res.status(400).send({
-                message:"Name must no void"
+                message:"O nome e a senha não podem ser campos vazios."
             })
         }
-        const praca = request.body;
-        Praca.create(praca)
+
+        const senha_encriptada = await bcrypt.hash(senha, 10)
+
+        Praca.create({nome,senha:senha_encriptada,token})
         .then(data=>{
             response.send(data);
         })
         .catch(e=>{
-            response.status(500).send({message : e.message || "Can't save product."});
+            response.status(500).send({message : e.message || "Não foi possível finalizar o cadastro."});
         })
     },  
 
     findAll: (request,response)=>{
-        praca.findAll()
+        Praca.findAll()
         .then(data=>{
             response.send(data);
         })
@@ -31,7 +37,7 @@ export const pracaController = {
 
     findById: (request,response)=>{
         const id = request.params.id
-        praca.findByUk(id)
+        Praca.findByUk(id)
         .then(data=>{
             response.send(data);
         })
@@ -44,7 +50,7 @@ export const pracaController = {
         const id = request.params.id;
         const praca = request.body;
 
-        const pracaBd = await praca.findByUk(id);
+        const pracaBd = await Praca.findByUk(id);
 
         
         if (pracaBd) {
@@ -64,7 +70,7 @@ export const pracaController = {
 
     deleteById: async (request,response)=>{
         const id = request.params.id;
-        const pracaBd = await praca.findByUk(id);
+        const pracaBd = await Praca.findByUk(id);
 
         if (pracaBd) {
             await pracaBd.destroy();
@@ -74,9 +80,9 @@ export const pracaController = {
         }
     },
 
-    deleteALL: async (request,response)=>{
+    deleteALL: async (_,response)=>{
         try {
-            await praca.destroy({where:{}})
+            await Praca.destroy({where:{}})
             response.status(204).json('Todos os pracas foram excluídos com sucesso!')
         } catch (error) {
             response.status(500).json('Falha ao tentar excluir todo os pracas.')

@@ -14,9 +14,10 @@ export const pracaController = {
             })
         }
 
-        const senha_encriptada = await bcrypt.hash(senha, 10)
-
-        Praca.create({nome,senha:senha_encriptada,token})
+        const senha_encriptada = await bcrypt.hash(senha, 10);
+        const praca = {nome:nome,senha:senha_encriptada,token:token}
+        console.log(praca);
+        Praca.create(praca)
         .then(data=>{
             response.send(data);
         })

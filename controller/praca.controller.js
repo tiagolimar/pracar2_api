@@ -1,4 +1,4 @@
-import db from '../model';
+import db from '../model/index.js';
 import bcrypt from 'bcryptjs';
 
 const Praca = db.praca;

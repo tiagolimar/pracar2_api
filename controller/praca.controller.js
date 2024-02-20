@@ -1,17 +1,18 @@
 import db from '../model/index.js';
 import bcrypt from 'bcryptjs';
+import crypto from 'crypto';
 
 const Praca = db.praca;
 
 function gerarToken(){
-    return 'Av31jlI4upO'
+    return crypto.randomBytes(4).toString('hex');
 }
 
 export const pracaController = {
     cadastrar: async (request,response)=>{
         const {nome, senha} = request.body;
 
-        if(!(nome || senha)){
+        if(!nome || !senha){
             response.status(400).send({
                 message:"O nome e a senha não podem ser campos vazios."
             })
@@ -23,19 +24,20 @@ export const pracaController = {
             response.status(400).send({
                 message:"Já existe uma praça com esse nome."
             })
+        }else{
+            const senha_encriptada = await bcrypt.hash(senha, 10);
+            const token = gerarToken()
+            const praca = {nome:nome,senha:senha_encriptada,token:token}
+    
+            Praca.create(praca)
+            .then(dados=>{
+                response.send(dados);
+            })
+            .catch(e=>{
+                response.status(500).send({message : e.message || "Não foi possível finalizar o cadastro."});
+            })
         }
 
-        const senha_encriptada = await bcrypt.hash(senha, 10);
-        const token = gerarToken()
-        const praca = {nome:nome,senha:senha_encriptada,token:token}
-
-        Praca.create(praca)
-        .then(dados=>{
-            response.send(dados);
-        })
-        .catch(e=>{
-            response.status(500).send({message : e.message || "Não foi possível finalizar o cadastro."});
-        })
     },
 
     login: async (request,response)=>{

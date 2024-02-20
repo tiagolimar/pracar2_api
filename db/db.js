@@ -5,10 +5,10 @@ export const connection = new Sequelize(DB_CONFIG.db,DB_CONFIG.user,DB_CONFIG.pa
     host: DB_CONFIG.host,
     dialect: DB_CONFIG.dialect,
     dialectOptions: {
-        ssl: {
-            require: true,
-            rejectUnauthorized: false, // Configuração para evitar o erro "SSL/TLS required"
-        },
+        // ssl: {
+        //     require: true,
+        //     rejectUnauthorized: false, // Configuração para evitar o erro "SSL/TLS required"
+        // },
     },
     pool: {
         max: 5,

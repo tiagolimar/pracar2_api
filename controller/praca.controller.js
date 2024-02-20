@@ -11,16 +11,15 @@ function gerarToken(){
 export const pracaController = {
     cadastrar: async (request,response)=>{
         const {nome, senha} = request.body;
-
         if(!nome || !senha){
             response.status(400).send({
                 message:"O nome e a senha não podem ser campos vazios."
             })
         }
-
-        const dados = await Praca.findAll({where:{nome:nome}});
-
-        if(dados){
+        
+        const dados = await Praca.findAll({where:{nome:nome}})[0];
+        console.log(dados);
+        if(Object.keys(dados).lenght>0){
             response.status(400).send({
                 message:"Já existe uma praça com esse nome."
             })

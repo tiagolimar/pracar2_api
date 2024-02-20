@@ -5,7 +5,7 @@ import crypto from 'crypto';
 const Praca = db.praca;
 
 function gerarToken(){
-    return crypto.randomBytes(4).toString('hex');
+    return crypto.randomBytes(8).toString('hex');
 }
 
 export const pracaController = {
@@ -18,14 +18,14 @@ export const pracaController = {
         }
         
         const dados = await Praca.findAll({where:{nome:nome}})[0];
-        console.log(dados);
-        if(Object.keys(dados).lenght>0){
+
+        if(dados){
             response.status(400).send({
                 message:"Já existe uma praça com esse nome."
             })
         }else{
             const senha_encriptada = await bcrypt.hash(senha, 10);
-            const token = gerarToken()
+            const token = gerarToken();
             const praca = {nome:nome,senha:senha_encriptada,token:token}
     
             Praca.create(praca)
@@ -42,25 +42,29 @@ export const pracaController = {
     login: async (request,response)=>{
         const {nome, senha} = request.body;
 
-        let dados = await Praca.findAll({where:{nome:nome}})
-        dados = dados[0]
+        let dados = await Praca.findAll({where:{nome:nome}});
 
-        if (dados){
-            const senhasConferem = await bcrypt.compare(senha, dados.senha)
+        dados = dados[0];
 
-            if (senhasConferem){
-                response.send(dados);
+        try {
+            if (dados){
+                const senhasConferem = await bcrypt.compare(senha, dados.senha);
+    
+                if (senhasConferem){
+                    response.send(dados);
+                }else{
+                    response.status(400).send({
+                        message:"O nome ou a senha não conferem."
+                    })
+                }
             }else{
                 response.status(400).send({
                     message:"O nome ou a senha não conferem."
                 })
             }
-        }else{
-            response.status(400).send({
-                message:"O nome ou a senha não conferem."
-            })
+        } catch (error) {
+            response.status(500).send({message:error.message || "Não foi possível verificar o nome e a senha."});
         }
-        response.status(500).send({message:dados.message || "Não foi possível verificar o nome e a senha."});
     },
 
     update: async (request,response)=>{

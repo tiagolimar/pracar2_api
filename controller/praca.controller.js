@@ -5,7 +5,27 @@ import crypto from 'crypto';
 const Praca = db.praca;
 
 function gerarToken(){
-    return crypto.randomBytes(8).toString('hex');
+    return crypto.randomBytes(16).toString('hex');
+}
+
+async function gerarURL(nome) {
+    let url = nome
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase()
+            .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+
+    let urlExiste = true;
+    let contador =  1;
+    while (urlExiste) {
+        const dados = await Praca.findAll({ where: { url: url } });
+        urlExiste = dados.length >  0;
+        if (urlExiste) {
+            url = url + contador;
+            contador++;
+        }
+    }
+    return url;
 }
 
 export const pracaController = {
@@ -26,7 +46,8 @@ export const pracaController = {
         }else{
             const senha_encriptada = await bcrypt.hash(senha, 10);
             const token = gerarToken();
-            const praca = {nome:nome,senha:senha_encriptada,token:token}
+            const url = await gerarURL(nome);
+            const praca = {nome,senha:senha_encriptada,token,url}
     
             Praca.create(praca)
             .then(dados=>{
@@ -36,7 +57,6 @@ export const pracaController = {
                 response.status(500).send({message : e.message || "Não foi possível finalizar o cadastro."});
             })
         }
-
     },
 
     login: async (request,response)=>{
@@ -64,6 +84,24 @@ export const pracaController = {
             }
         } catch (error) {
             response.status(500).send({message:error.message || "Não foi possível verificar o nome e a senha."});
+        }
+    },
+
+    check: async (request, response)=>{
+        const { url } = request.body;
+        let dados = await Praca.findAll({where:{url:url}});
+        dados = dados[0];
+        try {
+            if (dados) {
+                const token = dados.token;
+                response.send({token, exists:true});
+            }else{
+                response.status(400).send({
+                    message:"Praça inexistente."
+                })
+            }          
+        } catch (error) {
+            response.status(500).send({message:error.message || "Não foi possível concluir a autenticação"}); 
         }
     },
 

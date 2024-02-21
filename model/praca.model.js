@@ -7,6 +7,10 @@ export const pracaModel = connection => {
             allowNull: false,
             unique: true
         },
+        url:{
+            type: DataTypes.STRING,
+            unique: true
+        },
         senha:{
             type: DataTypes.STRING,
             allowNull: false

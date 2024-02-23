@@ -10,10 +10,11 @@ export const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use(cors({
-    origin: "https://pracar2.vercel.app",
-    methods: ['GET', 'POST', 'PATCH'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
+    origin: "*",
+    methods: "GET, POST,PATCH",
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+    optionsSuccessStatus:  204
 }))
 
 db.connection.sync()
@@ -25,7 +26,7 @@ db.connection.sync()
 })
 
 
-app.get('/',(request,response)=>{
+app.get('/',(_,response)=>{
     response.status(200).json({mensage:"Hi, this server is on..."})
 })
 

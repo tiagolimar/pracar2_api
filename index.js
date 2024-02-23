@@ -12,6 +12,8 @@ app.use(express.urlencoded({extended:true}))
 app.use(cors({
     origin: "https://pracar2.vercel.app",
     methods: ['GET', 'POST', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }))
 
 db.connection.sync()

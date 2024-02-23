@@ -1,8 +1,8 @@
 import db from '../model/index.js';
 import bcrypt from 'bcryptjs';
 
-import { gerarToken } from './functions/index';
-import { gerarURL } from './functions/index';
+import { gerarToken } from './functions/index.js';
+import { gerarURL } from './functions/index.js';
 
 const Praca = db.praca;
 
@@ -74,12 +74,11 @@ export const pracaController = {
 
     update: async (request,response)=>{
         const {nome, senha, nova_senha} = request.body;
-
-        let dados = await Praca.findAll({where:{nome:nome}});
-        const praca = dados[0];
-
+        const praca = await Praca.findOne({where:{nome:nome}});
+        
         if (praca) {
             const senhasConferem = await bcrypt.compare(senha, praca.senha);
+
             if (senhasConferem) {
                 praca.update({senha:nova_senha})
                 .then(data=>{
@@ -89,10 +88,10 @@ export const pracaController = {
                     response.status(500).send({message : e.message || "Não foi possível alterar a senha."});
                 })
             } else {
-                response.status(404).send({message : e.message || "O nome ou a senha não conferem."})
+                response.status(404).send({message : "O nome ou a senha não conferem."})
             }
         } else {
-            response.status(404).send({message : e.message || "O nome ou a senha não conferem."})
+            response.status(404).send({message : "O nome ou a senha não conferem."})
         }
     },
 

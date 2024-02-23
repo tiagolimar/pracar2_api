@@ -1,4 +1,7 @@
 import crypto from 'crypto';
+import db from './../../model/index.js';
+
+const Praca = db.praca;
 
 export function gerarToken(){
     return crypto.randomBytes(16).toString('hex');
@@ -14,8 +17,8 @@ export async function gerarURL(nome) {
     let urlExiste = true;
     let contador =  1;
     while (urlExiste) {
-        const dados = await Praca.findAll({ where: { url: url } });
-        urlExiste = dados.length >  0;
+        const dados = await Praca.findOne({ where: { url: url } });
+        urlExiste = dados? true:false;
         if (urlExiste) {
             url = url + contador;
             contador++;

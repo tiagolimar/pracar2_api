@@ -9,6 +9,7 @@ export const app = express();
 
 app.use(cors({
     origin: "https://pracar2.vercel.app",
+    // origin: "http://localhost:3000",
     methods: "GET, POST, PATCH",
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -20,7 +21,7 @@ app.use(express.urlencoded({extended:true}))
 
 db.connection.sync()
 .then(()=>{
-    console.log("Drop and re-sync db.");
+    console.log("Re-sync db.");
 })
 .catch(err=>{
     console.log("Failed to sync db.", err.message);
@@ -35,7 +36,7 @@ app.get('/',(_,response)=>{
 // routeUsuario(app)
 routePraca(app)
 
-const host = process.env.PGHOST || 'localhost';
+const host = process.env.PGHOST;
 const port = 5000;
 
 

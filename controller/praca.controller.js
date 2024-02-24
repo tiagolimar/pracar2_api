@@ -80,7 +80,8 @@ export const pracaController = {
             const senhasConferem = await bcrypt.compare(senha, praca.senha);
 
             if (senhasConferem) {
-                praca.update({senha:nova_senha})
+                const token = gerarToken();
+                praca.update({token, senha:nova_senha})
                 .then(data=>{
                     response.send(data);
                 })

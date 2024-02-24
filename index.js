@@ -7,8 +7,6 @@ import cors from "cors";
 
 export const app = express();
 
-app.use(express.json());
-app.use(express.urlencoded({extended:true}))
 app.use(cors({
     origin: "https://pracar2.vercel.app",
     methods: "GET, POST, PATCH",
@@ -16,6 +14,9 @@ app.use(cors({
     credentials: true,
     optionsSuccessStatus:  204
 }))
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}))
 
 db.connection.sync()
 .then(()=>{

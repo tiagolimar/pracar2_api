@@ -61,7 +61,8 @@ export const pracaController = {
         try {
             if (praca) {
                 const token = praca.token;
-                response.send({token, exists:true});
+                const nome = praca.nome
+                response.send({token, nome ,exists:true});
             }else{
                 response.status(400).send({
                     message:"Praça inexistente."

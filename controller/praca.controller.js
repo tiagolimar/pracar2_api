@@ -1,8 +1,7 @@
 import db from '../model/index.js';
 import bcrypt from 'bcryptjs';
 
-import { gerarToken } from './functions/index.js';
-import { gerarURL } from './functions/index.js';
+import { gerarToken, gerarURL, gerarSenhaCaixa } from './functions/index.js';
 
 const Praca = db.praca;
 
@@ -18,7 +17,8 @@ export const pracaController = {
         }else{
             const token = gerarToken();
             const url = await gerarURL(nome);
-            const praca = {nome,senha,token,url};
+            const senha_caixa = gerarSenhaCaixa();
+            const praca = { nome,senha, senha_caixa, token, url };
     
             Praca.create(praca)
             .then(dados=>{

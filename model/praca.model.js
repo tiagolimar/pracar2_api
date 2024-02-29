@@ -15,6 +15,10 @@ export const pracaModel = connection => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        senha_caixa:{
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         token:{
             type: DataTypes.STRING,
         },

@@ -6,7 +6,7 @@ import { gerarToken, gerarURL, gerarSenhaCaixa } from './functions/index.js';
 const Praca = db.praca;
 
 export const pracaController = {
-    cadastrar: async (request,response)=>{
+    cadastrar: async (request, response)=>{
         const {nome, senha} = request.body;
         const pracaExistente = await Praca.findOne({where:{nome:nome}});
 
@@ -30,7 +30,7 @@ export const pracaController = {
         }
     },
 
-    login: async (request,response)=>{
+    login: async (request, response)=>{
         const {nome, senha} = request.body;
         const praca = await Praca.findOne({where:{nome:nome}});
 
@@ -60,9 +60,8 @@ export const pracaController = {
 
         try {
             if (praca) {
-                const token = praca.token;
-                const nome = praca.nome
-                response.send({token, nome ,exists:true});
+                const {id, token, nome, url, senha_caixa} = praca;
+                response.send({id, token, nome, url, senha_caixa, exists:true});
             }else{
                 response.status(400).send({
                     message:"Praça inexistente."
@@ -73,7 +72,7 @@ export const pracaController = {
         }
     },
 
-    update: async (request,response)=>{
+    update: async (request, response)=>{
         const {nome, senha, nova_senha} = request.body;
         const praca = await Praca.findOne({where:{nome:nome}});
         
@@ -97,6 +96,26 @@ export const pracaController = {
         }
     },
 
+    updateCaixa: async (request, response)=>{
+        const {id, senha} = request.body;
+        const praca = await Praca.findByUk(id);
+        
+        if (praca) {
+            praca.update({senha_caixa:senha})
+            .then(data=>{
+                response.send(data);
+            })
+            .catch(e=>{
+                response.status(500).send({message : e.message || "Não foi possível alterar a senha."});
+            })
+        } else {
+            response.status(404).send({message : `O id ${id} informado não é válido.`})
+        }
+    },
+
+    // getCaixa: ()=>{
+
+    // },
     // deleteById: async (request,response)=>{
     //     const id = request.params.id;
     //     const pracaBd = await Praca.findByUk(id);

@@ -9,6 +9,7 @@ export const pracaModel = connection => {
         },
         url:{
             type: DataTypes.STRING,
+            allowNull: false,
             unique: true
         },
         senha:{

@@ -1,7 +1,7 @@
 import express from 'express';
 import db from './model/index.js';
 // import { routeProduto } from './routes/produto.routes.js';
-// import { routeUsuario } from './routes/usuario.routes.js';
+import { routeEvento } from './routes/evento.routes.js';
 import { routePraca } from './routes/praca.routes.js';
 import cors from "cors";
 
@@ -33,7 +33,7 @@ app.get('/',(_,response)=>{
 })
 
 // routeProduto(app)
-// routeUsuario(app)
+routeEvento(app)
 routePraca(app)
 
 const host = process.env.PGHOST;

@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize"
 
 export const produtoModel = connection => {
-    const Produto = connection.define('tb_pracar2_produtos',{
+    const Produto = connection.define('tb_produtos',{
         nome:{
             type: DataTypes.STRING,
             allowNull: false

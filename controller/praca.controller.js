@@ -4,6 +4,8 @@ import bcrypt from 'bcryptjs';
 import { gerarToken, gerarURL, gerarSenhaCaixa } from './functions/index.js';
 
 const Praca = db.praca;
+const Evento = db.evento;
+const Pagamentos = db.pagamentos;
 
 export const pracaController = {
     cadastrar: async (request, response)=>{
@@ -19,10 +21,16 @@ export const pracaController = {
             const url = await gerarURL(nome);
             const senha_caixa = gerarSenhaCaixa();
             const praca = { nome,senha, senha_caixa, token, url };
-    
+
             Praca.create(praca)
-            .then(dados=>{
-                response.send(dados);
+            .then(async dados=>{
+                try {
+                    const { id } = dados;
+                    await Promise.all([Evento.create({praca:id}), Pagamentos.create({praca:id})]);
+                    response.send(dados);
+                } catch (e) {
+                    response.status(500).send({message : e.message || "Não foi possível finalizar o cadastro."});
+                }
             })
             .catch(e=>{
                 response.status(500).send({message : e.message || "Não foi possível finalizar o cadastro."});
@@ -63,7 +71,7 @@ export const pracaController = {
                 const {id, token, nome, url, senha_caixa} = praca;
                 response.send({id, token, nome, url, senha_caixa, exists:true});
             }else{
-                response.status(400).send({
+                response.status(404).send({
                     message:"Praça inexistente."
                 })
             }          
@@ -112,10 +120,70 @@ export const pracaController = {
             response.status(404).send({message : `O id ${id} informado não é válido.`})
         }
     },
-
+    
     // getCaixa: ()=>{
-
+        
     // },
+
+    getEvento: (request,response)=>{
+        const id = request.params.id
+        Evento.findByPk(id)
+        .then(data=>{
+            response.send(data);
+        })
+        .catch(e=>{
+            response.status(500).send({message : e.message || `Não foi possível obter o evento de <id></id> ${id}.`});
+        })
+    },
+
+    updateEvento: async (request, response)=>{
+        const {id, ...dadosEvento} = request.body;
+
+        const evento = await Evento.findOne({where:{praca:id}});
+        
+        if (evento) {
+            evento.update({...dadosEvento})
+            .then(data=>{
+                response.send(data);
+            })
+            .catch(e=>{
+                response.status(500).send({message : e.message || "Não foi atualizar os dados."});
+            })
+        } else {
+            response.status(404).send({message : `O id ${id} informado não é válido.`})
+        }
+    },
+
+    getPagamentos: (request,response)=>{
+        const id = request.params.id;
+        Pagamentos.findByPk(id)
+        .then(data=>{
+            response.send(data);
+        })
+        .catch(e=>{
+            response.status(500).send({message : e.message || `Não foi possível obter o evento de <id></id> ${id}.`});
+        })
+    },
+
+    updatePagamentos: async (request, response)=>{
+        console.log(request.body);
+        const {id, ...dadosPagamentos} = request.body;
+
+        const pagamentos = await Pagamentos.findOne({where:{praca:id}});
+
+        if (pagamentos) {
+            pagamentos.update({...dadosPagamentos})
+            .then(data=>{
+                response.send(data);
+            })
+            .catch(e=>{
+                response.status(500).send({message : e.message || "Não foi atualizar os dados."});
+            })
+        } else {
+            response.status(404).send({message : `O id ${id} informado não é válido.`})
+        }
+    },
+
     // deleteById: async (request,response)=>{
     //     const id = request.params.id;
     //     const pracaBd = await Praca.findByUk(id);

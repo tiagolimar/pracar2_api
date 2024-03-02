@@ -39,7 +39,7 @@ export const produtoController = {
         response.send(datas);
     },
 
-    findAll: (request,response)=>{
+    findAll: (_,response)=>{
         Produto.findAll()
         .then(data=>{
             response.send(data);
@@ -73,7 +73,7 @@ export const produtoController = {
         })
     },
 
-    findCategories: (request, response) => {
+    findCategories: (_, response) => {
         Produto.findAll({
             attributes: [[sequelize.fn('DISTINCT', sequelize.col('categoria')), 'categoria']],
             raw: true
@@ -102,7 +102,7 @@ export const produtoController = {
             response.status(500).send({ message: e.message || `Erro ao buscar produtos da categoria ${categoria}.` });
         });
     },
-     
+
     update: async (request,response)=>{
         const id = request.params.id;
         const produto = request.body;
@@ -137,7 +137,7 @@ export const produtoController = {
         }
     },
 
-    deleteALL: async (request,response)=>{
+    deleteALL: async (_,response)=>{
         try {
             await Produto.destroy({where:{}})
             response.status(204).json('Todos os produtos foram excluídos com sucesso!')

@@ -9,7 +9,7 @@ export const routePraca = ()=>{
     router.post('/praca/check', pracaController.check)
     router.post('/praca/login', pracaController.login)
     router.patch('/praca/update', pracaController.update)
-    router.patch('/praca/caixa/', pracaController.updateCaixa)
+    router.patch('/praca/caixa', pracaController.updateCaixa)
     // router.get('/praca/caixa/:url', pracaController.getCaixa)
     // router.delete('/praca/id/:id', pracaController.deleteById)
     // router.delete('/pracas', pracaController.deleteALL)

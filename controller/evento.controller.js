@@ -15,7 +15,7 @@ export const eventoController = {
     },
 
     update: async (request,response)=>{
-        const id = request.params.id;
+        const {} = request.body;
         const evento = request.body;
 
         const eventoBd = await Evento.findByUk(id);

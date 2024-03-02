@@ -98,7 +98,7 @@ export const pracaController = {
 
     updateCaixa: async (request, response)=>{
         const {id, senha} = request.body;
-        const praca = await Praca.findByUk(id);
+        const praca = await Praca.findByPk(id);
         
         if (praca) {
             praca.update({senha_caixa:senha})

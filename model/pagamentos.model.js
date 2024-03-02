@@ -10,16 +10,16 @@ export const pagamentosModel = (connection) => {
                 key: "id",
             },
         },
-        chaveA: {
+        chavePixA: {
             type: DataTypes.STRING,
         },
-        nomeA: {
+        nomePixA: {
             type: DataTypes.STRING,
         },
-        chaveB: {
+        chavePixB: {
             type: DataTypes.STRING,
         },
-        nomeB: {
+        nomePixB: {
             type: DataTypes.STRING,
         },
     });

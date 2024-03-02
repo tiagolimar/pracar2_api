@@ -16,9 +16,6 @@ export const routePraca = ()=>{
 
     router.get('/praca/pagamentos/:id', pracaController.getPagamentos)
     router.patch('/praca/pagamentos', pracaController.updatePagamentos)
-    // router.get('/praca/caixa/:url', pracaController.getCaixa)
-    // router.delete('/praca/id/:id', pracaController.deleteById)
-    // router.delete('/pracas', pracaController.deleteALL)
 
     app.use('/api',router)
 }

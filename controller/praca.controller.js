@@ -26,7 +26,10 @@ export const pracaController = {
             .then(async dados=>{
                 try {
                     const { id } = dados;
-                    await Promise.all([Evento.create({praca:id}), Pagamentos.create({praca:id})]);
+                    await Promise.all([
+                        Evento.create({praca:id}),
+                        Pagamentos.create({praca:id})
+                    ]);
                     response.send(dados);
                 } catch (e) {
                     response.status(500).send({message : e.message || "Não foi possível finalizar o cadastro."});
@@ -120,10 +123,6 @@ export const pracaController = {
             response.status(404).send({message : `O id ${id} informado não é válido.`})
         }
     },
-    
-    // getCaixa: ()=>{
-        
-    // },
 
     getEvento: (request,response)=>{
         const id = request.params.id
@@ -166,42 +165,20 @@ export const pracaController = {
     },
 
     updatePagamentos: async (request, response)=>{
-        console.log(request.body);
-        const {id, ...dadosPagamentos} = request.body;
+        const { id, ...dadosPagamentos } = request.body;
 
-        const pagamentos = await Pagamentos.findOne({where:{praca:id}});
-
+        console.log(dadosPagamentos);
+        const pagamentos = await Pagamentos.findOne({where:{id:+id}});
         if (pagamentos) {
-            pagamentos.update({...dadosPagamentos})
-            .then(data=>{
+            try {
+                const data = await pagamentos.update(dadosPagamentos);
+                console.log(data);
                 response.send(data);
-            })
-            .catch(e=>{
+            } catch (e) {
                 response.status(500).send({message : e.message || "Não foi atualizar os dados."});
-            })
+            }
         } else {
             response.status(404).send({message : `O id ${id} informado não é válido.`})
         }
     },
-
-    // deleteById: async (request,response)=>{
-    //     const id = request.params.id;
-    //     const pracaBd = await Praca.findByUk(id);
-
-    //     if (pracaBd) {
-    //         await pracaBd.destroy();
-    //         response.status(204).json('O praca foi excluído com sucesso');
-    //     }else{
-    //         response.status(404).json('O praca não existe.');
-    //     }
-    // },
-
-    // deleteALL: async (_,response)=>{
-    //     try {
-    //         await Praca.destroy({where:{}})
-    //         response.status(204).json('Todos os pracas foram excluídos com sucesso!')
-    //     } catch (error) {
-    //         response.status(500).json('Falha ao tentar excluir todo os pracas.')
-    //     }
-    // },
 }

@@ -167,12 +167,10 @@ export const pracaController = {
     updatePagamentos: async (request, response)=>{
         const { id, ...dadosPagamentos } = request.body;
 
-        console.log(dadosPagamentos);
         const pagamentos = await Pagamentos.findOne({where:{id:+id}});
         if (pagamentos) {
             try {
                 const data = await pagamentos.update(dadosPagamentos);
-                console.log(data);
                 response.send(data);
             } catch (e) {
                 response.status(500).send({message : e.message || "Não foi atualizar os dados."});

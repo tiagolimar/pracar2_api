@@ -40,19 +40,6 @@ export const produtoController = {
         })
     },
 
-    findByStatus: (request,response)=>{
-        let status = request.params.status.toLowerCase();
-        status = status === 'true' ? true : status === 'false' ? false : null;
-        
-        Produto.findAll({where:{ativo:status}})
-        .then(data=>{
-            response.send(data);
-        })
-        .catch(e=>{
-            response.status(500).send({message : e.message || `Can't get product with status ${status}.`});
-        })
-    },
-
     findCategories: (_, response) => {
         Produto.findAll({
             attributes: [[sequelize.fn('DISTINCT', sequelize.col('categoria')), 'categoria']],

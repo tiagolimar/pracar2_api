@@ -2,6 +2,14 @@ import { DataTypes } from "sequelize"
 
 export const produtoModel = connection => {
     const Produto = connection.define('tb_produtos',{
+        praca: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: "tb_pracas",
+                key: "id",
+            },
+        },
         nome:{
             type: DataTypes.STRING,
             allowNull: false

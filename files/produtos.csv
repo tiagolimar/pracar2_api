@@ -1,51 +1,51 @@
-url_img;categoria;nome_do_produto;descricao_do_produto;preco
-;Lanches;Bolo Mole;Uma fatia de bolo mole tradicional;2
-;Lanches;Bolo de Laranja;Uma fatia de bolo fofo tradicional de laranja;2,5
-;Lanches;Pastel de Queijo;Pastel tradicional frito com recheio de queijo;3
-;Lanches;Pastel Misto;Pastel tradicional frito com recheio de queijo e presunto;3
-;Lanches;Pastel de Frango;Pastel tradicional frito com recheio de frango;3
-;Lanches;Sandu°che misto;P∆o carioca com recheio de queijo e presunto;3,5
-;Bebida;Copo de Refrigerante, Coca-Cola;Um copo de refrigerante sabor Coca-Cola;2
-;Bebida;Copo de Refrigerante, Fanta Uva;Um copo de refrigerante sabor Fanta Uva;2
-;Bebida;Copo de Refrigerante, Fanta Laranja;Um copo de refrigerante sabor Fanta Laranja;2
-;Bebida;Copo de Refrigerante, Guaran†;Um copo de refrigerante sabor Guaran†;2
-;Bebida;Copo de Refrigerante, Caju;Um copo de refrigerante sabor Caju;2
-;Bebida;Copo de Refrigerante, Coca-Cola Zero;Um copo de refrigerante sabor Coca-Cola Zero;2
-;Bebida;Latinha de Refrigerante, Coca-Cola;Uma latinha de refrigerante sabor Coca-Cola;3,5
-;Bebida;Latinha de Refrigerante, Fanta Uva;Uma latinha de refrigerante sabor Fanta Uva;3,5
-;Bebida;Latinha de Refrigerante, Fanta Laranja;Uma latinha de refrigerante sabor Fanta Laranja;3,5
-;Bebida;Latinha de Refrigerante, Guaran†;Uma latinha de refrigerante sabor Guaran†;3,5
-;Bebida;Latinha de Refrigerante, Caju;Uma latinha de refrigerante sabor Caju;3,5
-;Bebida;Latinha de Refrigerante, Coca-Cola Zero;Uma latinha de refrigerante sabor Coca-Cola Zero;3,5
-;Bebida;Refrigerante de 2L,  Coca-Cola;Garrafa de 2 litros de refrigerante sabor Coca-Cola;7
-;Bebida;Refrigerante de 2L,  Fanta Uva;Garrafa de 2 litros de refrigerante sabor Fanta Uva;7
-;Bebida;Refrigerante de 2L,  Fanta Laranja;Garrafa de 2 litros de refrigerante sabor Fanta Laranja;7
-;Bebida;Refrigerante de 2L,  Guaran†;Garrafa de 2 litros de refrigerante sabor Guaran†;7
-;Bebida;Refrigerante de 2L,  Caju;Garrafa de 2 litros de refrigerante sabor Caju;7
-;Bebida;Refrigerante de 2L,  Coca-Cola Zero;Garrafa de 2 litros de refrigerante sabor Coca-Cola Zero;7
-;Bebida;Copo de Suco de Acerola;Um copo de Suco de Acerola;3,5
-;Bebida;Copo de Suco de Caj†;Um copo de Suco de Caj†;3,5
-;Bebida;Copo de Suco de Graviola;Um copo de Suco de Graviola;3,5
-;Bebida;Copo de Suco de Goiaba;Um copo de Suco de Goiaba;3,5
-;Bebida;Copo de Suco de Laranja;Um copo de Suco de Laranja;3,5
-;Lanches;Tapioca Simples;Uma tapioca tradicional com margarina;3
-;Lanches;Tapioca Mista;Uma tapioca tradicional com recheio de queijo e presunto;3
-;Lanches;Tapioca de Frango;Uma tapioca tradicional com recheio de frango;3
-;Lanches;Tapioca de Queijo;Uma tapioca tradicional com recheio de queijo;3
-;Lanches;Salgado Misto;Salgado tradicional com recheio misto;5
-;Lanches;Salgado Folheado de Frango;Salgado folheado com recheio de frango;5
-;Lanches;Salgado Quatro Queijos;Salgado tradicional com recheio quatro queijos;5
-;Lanches;Salgado de Frango;Salgado tradicional com recheio de frango;5
-;Lanches;Croassaint;Croassaint com recheio de frango;5
-;Lanches;Coxinha;Salgado tradicional com recheio de frango;5
-;Lanches;Fatia de Pizza;Fatia de Pizza com diversas opá‰es de sabores;5
-;Lanches;Pizza Inteira;Pizza inteira com diversas opá‰es de sabores;40
-;Variados;Espetinho;Espetinho de churrasco de carnes variadas;7
-;Variados;Espetinho + Pratinho;Espetinho de churrasco de carnes variadas e pratinho de arroz ou bai∆o com farofa;12
-;Variados;Pratinho de bai∆o;Um pratinho de bai∆o com farofa para acompanhamento com espetinho;8
-;Variados;Pratinho de arroz;Um pratinho de arroz com farofa para acompanhamento com espetinho;8
-;Variados;Pratinho Completo;Pratinho com arroz ou bai∆o, creme de frango, salada e farofa;10
-;Bebida;Copo de cafÇ;Um simples copo de cafÇ;1
-;Bebida;Copo de cafÇ com leite;Um simples copo de cafÇ com leite;1,5
-;Bebida;Copo de leite;Um simples copo de leite;2
-;Bebida;Copo de ch†;Um simples copo de ch†;2
+categoria;url_img;nome;descricao;preco
+Lanches;https://www.bonde.com.br/api/images/proxy?format=webp&width=800&src=https://www.bonde.com.br/img/bondenews/2018/09/img_1_33_1132.jpg;Bolo Mole;Uma fatia de bolo mole tradicional;2
+Lanches;https://p2.trrsf.com/image/fget/cf/942/530/images.terra.com/2023/05/02/bolo-laranja-ursdzhu7qmur.jpg;Bolo de Laranja;Uma fatia de bolo fofo tradicional de laranja;2,5
+Lanches;https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Brazilian_pastel.jpg/800px-Brazilian_pastel.jpg;Pastel de Queijo;Pastel tradicional frito com recheio de queijo;3
+Lanches;https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Brazilian_pastel.jpg/800px-Brazilian_pastel.jpg;Pastel Misto;Pastel tradicional frito com recheio de queijo e presunto;3
+Lanches;https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Brazilian_pastel.jpg/800px-Brazilian_pastel.jpg;Pastel de Frango;Pastel tradicional frito com recheio de frango;3
+Lanches;https://i0.wp.com/paraisodacozinha.com.br/wp-content/uploads/misto-quente-tradicional-a.jpg?w=510&ssl=1;Sandu√≠che misto;P√£o carioca com recheio de queijo e presunto;3,5
+Bebida;https://img.freepik.com/fotos-gratis/cola-fresca-bebida-em-vidro_144627-16201.jpg?size=626&ext=jpg;Copo de Refrigerante, Coca-Cola;Um copo de refrigerante sabor Coca-Cola;2
+Bebida;https://img.freepik.com/fotos-gratis/cola-fresca-bebida-em-vidro_144627-16201.jpg?size=626&ext=jpg;Copo de Refrigerante, Fanta Uva;Um copo de refrigerante sabor Fanta Uva;2
+Bebida;https://img.freepik.com/fotos-gratis/cola-fresca-bebida-em-vidro_144627-16201.jpg?size=626&ext=jpg;Copo de Refrigerante, Fanta Laranja;Um copo de refrigerante sabor Fanta Laranja;2
+Bebida;https://img.freepik.com/fotos-gratis/cola-fresca-bebida-em-vidro_144627-16201.jpg?size=626&ext=jpg;Copo de Refrigerante, Guaran√°;Um copo de refrigerante sabor Guaran√°;2
+Bebida;https://img.freepik.com/fotos-gratis/cola-fresca-bebida-em-vidro_144627-16201.jpg?size=626&ext=jpg;Copo de Refrigerante, Caju;Um copo de refrigerante sabor Caju;2
+Bebida;https://img.freepik.com/fotos-gratis/cola-fresca-bebida-em-vidro_144627-16201.jpg?size=626&ext=jpg;Copo de Refrigerante, Coca-Cola Zero;Um copo de refrigerante sabor Coca-Cola Zero;2
+Bebida;https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1988-refrigerante-coca-cola-lata-220ml.jpg?s=291868e7b3f73c84200ae8cd33a2227e;Latinha de Refrigerante, Coca-Cola;Uma latinha de refrigerante sabor Coca-Cola;3,5
+Bebida;https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1988-refrigerante-coca-cola-lata-220ml.jpg?s=291868e7b3f73c84200ae8cd33a2227e;Latinha de Refrigerante, Fanta Uva;Uma latinha de refrigerante sabor Fanta Uva;3,5
+Bebida;https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1988-refrigerante-coca-cola-lata-220ml.jpg?s=291868e7b3f73c84200ae8cd33a2227e;Latinha de Refrigerante, Fanta Laranja;Uma latinha de refrigerante sabor Fanta Laranja;3,5
+Bebida;https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1988-refrigerante-coca-cola-lata-220ml.jpg?s=291868e7b3f73c84200ae8cd33a2227e;Latinha de Refrigerante, Guaran√°;Uma latinha de refrigerante sabor Guaran√°;3,5
+Bebida;https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1988-refrigerante-coca-cola-lata-220ml.jpg?s=291868e7b3f73c84200ae8cd33a2227e;Latinha de Refrigerante, Caju;Uma latinha de refrigerante sabor Caju;3,5
+Bebida;https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1988-refrigerante-coca-cola-lata-220ml.jpg?s=291868e7b3f73c84200ae8cd33a2227e;Latinha de Refrigerante, Coca-Cola Zero;Uma latinha de refrigerante sabor Coca-Cola Zero;3,5
+Bebida;https://d3gdr9n5lqb5z7.cloudfront.net/fotos/931476_mini.jpg;Refrigerante de 2L, Coca-Cola;Garrafa de 2 litros de refrigerante sabor Coca-Cola;7
+Bebida;https://d3gdr9n5lqb5z7.cloudfront.net/fotos/931476_mini.jpg;Refrigerante de 2L, Fanta Uva;Garrafa de 2 litros de refrigerante sabor Fanta Uva;7
+Bebida;https://d3gdr9n5lqb5z7.cloudfront.net/fotos/931476_mini.jpg;Refrigerante de 2L, Fanta Laranja;Garrafa de 2 litros de refrigerante sabor Fanta Laranja;7
+Bebida;https://d3gdr9n5lqb5z7.cloudfront.net/fotos/931476_mini.jpg;Refrigerante de 2L, Guaran√°;Garrafa de 2 litros de refrigerante sabor Guaran√°;7
+Bebida;https://d3gdr9n5lqb5z7.cloudfront.net/fotos/931476_mini.jpg;Refrigerante de 2L, Caju;Garrafa de 2 litros de refrigerante sabor Caju;7
+Bebida;https://d3gdr9n5lqb5z7.cloudfront.net/fotos/931476_mini.jpg;Refrigerante de 2L, Coca-Cola Zero;Garrafa de 2 litros de refrigerante sabor Coca-Cola Zero;7
+Bebida;https://img.freepik.com/fotos-gratis/delicioso-copo-de-suco-de-laranja_144627-16581.jpg?size=626&ext=jpg&ga=GA1.1.1240599150.1710894416&semt=ais;Copo de Suco de Acerola;Um copo de Suco de Acerola;3,5
+Bebida;https://img.freepik.com/fotos-gratis/delicioso-copo-de-suco-de-laranja_144627-16581.jpg?size=626&ext=jpg&ga=GA1.1.1240599150.1710894416&semt=ais;Copo de Suco de Caju;Um copo de Suco de Caj√°;3,5
+Bebida;https://img.freepik.com/fotos-gratis/delicioso-copo-de-suco-de-laranja_144627-16581.jpg?size=626&ext=jpg&ga=GA1.1.1240599150.1710894416&semt=ais;Copo de Suco de Graviola;Um copo de Suco de Graviola;3,5
+Bebida;https://img.freepik.com/fotos-gratis/delicioso-copo-de-suco-de-laranja_144627-16581.jpg?size=626&ext=jpg&ga=GA1.1.1240599150.1710894416&semt=ais;Copo de Suco de Goiaba;Um copo de Suco de Goiaba;3,5
+Bebida;https://img.freepik.com/fotos-gratis/delicioso-copo-de-suco-de-laranja_144627-16581.jpg?size=626&ext=jpg&ga=GA1.1.1240599150.1710894416&semt=ais;Copo de Suco de Laranja;Um copo de Suco de Laranja;3,5
+Lanches;https://www.receiteria.com.br/wp-content/uploads/tapioca-caseira-com-polvilho-doce-01-730x450.jpg;Tapioca Simples;Uma tapioca tradicional com margarina;3
+Lanches;https://www.receiteria.com.br/wp-content/uploads/tapioca-caseira-com-polvilho-doce-01-730x450.jpg;Tapioca Mista;Uma tapioca tradicional com recheio de queijo e presunto;3
+Lanches;https://www.receiteria.com.br/wp-content/uploads/tapioca-caseira-com-polvilho-doce-01-730x450.jpg;Tapioca de Frango;Uma tapioca tradicional com recheio de frango;3
+Lanches;https://www.receiteria.com.br/wp-content/uploads/tapioca-caseira-com-polvilho-doce-01-730x450.jpg;Tapioca de Queijo;Uma tapioca tradicional com recheio de queijo;3
+Lanches;https://www.anamariabrogui.com.br/assets/uploads/receitas/fotos/usuario-2077-718fd2f2e8af6f9ed91584ac82e9aa1e.jpg;Salgado Misto;Salgado tradicional com recheio misto;5
+Lanches;https://www.anamariabrogui.com.br/assets/uploads/receitas/fotos/usuario-2077-718fd2f2e8af6f9ed91584ac82e9aa1e.jpg;Salgado Folheado de Frango;Salgado folheado com recheio de frango;5
+Lanches;https://www.anamariabrogui.com.br/assets/uploads/receitas/fotos/usuario-2077-718fd2f2e8af6f9ed91584ac82e9aa1e.jpg;Salgado Quatro Queijos;Salgado tradicional com recheio quatro queijos;5
+Lanches;https://www.anamariabrogui.com.br/assets/uploads/receitas/fotos/usuario-2077-718fd2f2e8af6f9ed91584ac82e9aa1e.jpg;Salgado de Frango;Salgado tradicional com recheio de frango;5
+Lanches;https://www.anamariabrogui.com.br/assets/uploads/receitas/fotos/usuario-2077-718fd2f2e8af6f9ed91584ac82e9aa1e.jpg;Croassaint;Croassaint com recheio de frango;5
+Lanches;https://pubimg.band.uol.com.br/files/2c0933a3fb3b6946e074.webp;Coxinha;Salgado tradicional com recheio de frango;5
+Lanches;https://assets.afcdn.com/story/20170411/1072635_w944h530c1cx383cy383.webp;Fatia de Pizza;Fatia de Pizza com diversas op√ß√µes de sabores;5
+Lanches;https://assets.afcdn.com/story/20170411/1072635_w944h530c1cx383cy383.webp;Pizza Inteira;Pizza inteira com diversas op√ß√µes de sabores;40
+Variados;https://assets.afcdn.com/story/20170411/1072635_w944h530c1cx383cy383.webp;Espetinho;Espetinho de churrasco de carnes variadas;7
+Variados;https://assets.afcdn.com/story/20170411/1072635_w944h530c1cx383cy383.webp;Espetinho + Pratinho;Espetinho de churrasco de carnes variadas e pratinho de arroz ou bai√£o com farofa;12
+Variados;https://assets.afcdn.com/story/20170411/1072635_w944h530c1cx383cy383.webp;Pratinho de bai√£o;Um pratinho de bai√£o com farofa para acompanhamento com espetinho;8
+Variados;https://assets.afcdn.com/story/20170411/1072635_w944h530c1cx383cy383.webp;Pratinho de arroz;Um pratinho de arroz com farofa para acompanhamento com espetinho;8
+Variados;https://assets.afcdn.com/story/20170411/1072635_w944h530c1cx383cy383.webp;Pratinho Completo;Pratinho com arroz ou bai√£o, creme de frango, salada e farofa;10
+Bebida;https://praticadescartaveis.com.br/wp-content/uploads/2022/08/Copos-de-cafe%CC%81-descarta%CC%81veis-1080x675.jpg;Copo de caf√©;Um simples copo de caf√©;1
+Bebida;https://praticadescartaveis.com.br/wp-content/uploads/2022/08/Copos-de-cafe%CC%81-descarta%CC%81veis-1080x675.jpg;Copo de caf√© com leite;Um simples copo de caf√© com leite;1,5
+Bebida;https://praticadescartaveis.com.br/wp-content/uploads/2022/08/Copos-de-cafe%CC%81-descarta%CC%81veis-1080x675.jpg;Copo de leite;Um simples copo de leite;2
+Bebida;https://praticadescartaveis.com.br/wp-content/uploads/2022/08/Copos-de-cafe%CC%81-descarta%CC%81veis-1080x675.jpg;Copo de ch√°;Um simples copo de ch√°;2

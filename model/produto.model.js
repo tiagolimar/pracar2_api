@@ -6,20 +6,17 @@ export const produtoModel = connection => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        descricao:{
+        categoria:{
             type: DataTypes.STRING
         },
-        categoria:{
+        descricao:{
             type: DataTypes.STRING
         },
         preco:{
             type: DataTypes.DECIMAL
         },
-        img:{
+        url_img:{
             type: DataTypes.STRING
-        },
-        disponivel:{
-            type: DataTypes.BOOLEAN
         },
     })
     return Produto

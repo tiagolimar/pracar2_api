@@ -1,5 +1,6 @@
 import sequelize from 'sequelize';
 import db from '../model/index.js';
+import { produtosDados } from '../files/produtos.js';
 
 const Produto = db.produto;
 
@@ -20,33 +21,12 @@ export const produtoController = {
         })
     },
 
-    createAll: (request,response)=>{
-        let datas = []
-        for (let produto of request.body) {
-            if(!produto.nome){
-                response.status(400).send({
-                    message:"Name must no void"
-                })
-            }
-            Produto.create(produto)
-            .then(data=>{
-                datas.push(data);
-            })
-            .catch(e=>{
-                response.status(500).send({message : e.message || "Can't save product."});
-            })
-        }
-        response.send(datas);
-    },
-
     findAll: (_,response)=>{
-        Produto.findAll()
-        .then(data=>{
-            response.send(data);
-        })
-        .catch(e=>{
+        try {
+            response.send(produtosDados);
+        } catch (e) {
             response.status(500).send({message : e.message || "Can't get products."});
-        })
+        }
     },
 
     findById: (request,response)=>{

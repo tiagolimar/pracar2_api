@@ -1,12 +1,11 @@
 import express from "express"
 import { produtoController } from './../controller/produto.controller.js';
-import {app} from "../index.js"
+import { app } from "../index.js"
 
 export const routeProduto = ()=>{
     const router = express.Router();
 
     router.post('/produto', produtoController.create)
-    router.post('/produtos', produtoController.createAll)
     router.get('/produtos', produtoController.findAll)
     router.get('/produto/id/:id', produtoController.findById)
     router.get('/produto/categorias', produtoController.findCategories)

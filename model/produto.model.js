@@ -23,6 +23,9 @@ export const produtoModel = connection => {
         preco:{
             type: DataTypes.DECIMAL
         },
+        pedidos:{
+            type: DataTypes.INTEGER
+        },
         url_img:{
             type: DataTypes.STRING
         },

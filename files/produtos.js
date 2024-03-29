@@ -11,7 +11,7 @@ export const produtosDados = [
         "url_img": "https://p2.trrsf.com/image/fget/cf/942/530/images.terra.com/2023/05/02/bolo-laranja-ursdzhu7qmur.jpg",
         "nome": "Bolo de Laranja",
         "descricao": "Uma fatia de bolo fofo tradicional de laranja",
-        "preco": "2,5"
+        "preco": "2.5"
     },
     {
         "categoria": "Lanches",
@@ -39,7 +39,7 @@ export const produtosDados = [
         "url_img": "https://i0.wp.com/paraisodacozinha.com.br/wp-content/uploads/misto-quente-tradicional-a.jpg?w=510&ssl=1",
         "nome": "Sandu\u00edche misto",
         "descricao": "P\u00e3o carioca com recheio de queijo e presunto",
-        "preco": "3,5"
+        "preco": "3.5"
     },
     {
         "categoria": "Bebida",
@@ -88,42 +88,42 @@ export const produtosDados = [
         "url_img": "https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1988-refrigerante-coca-cola-lata-220ml.jpg?s=291868e7b3f73c84200ae8cd33a2227e",
         "nome": "Latinha de Refrigerante, Coca-Cola",
         "descricao": "Uma latinha de refrigerante sabor Coca-Cola",
-        "preco": "3,5"
+        "preco": "3.5"
     },
     {
         "categoria": "Bebida",
         "url_img": "https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1988-refrigerante-coca-cola-lata-220ml.jpg?s=291868e7b3f73c84200ae8cd33a2227e",
         "nome": "Latinha de Refrigerante, Fanta Uva",
         "descricao": "Uma latinha de refrigerante sabor Fanta Uva",
-        "preco": "3,5"
+        "preco": "3.5"
     },
     {
         "categoria": "Bebida",
         "url_img": "https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1988-refrigerante-coca-cola-lata-220ml.jpg?s=291868e7b3f73c84200ae8cd33a2227e",
         "nome": "Latinha de Refrigerante, Fanta Laranja",
         "descricao": "Uma latinha de refrigerante sabor Fanta Laranja",
-        "preco": "3,5"
+        "preco": "3.5"
     },
     {
         "categoria": "Bebida",
         "url_img": "https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1988-refrigerante-coca-cola-lata-220ml.jpg?s=291868e7b3f73c84200ae8cd33a2227e",
         "nome": "Latinha de Refrigerante, Guaran\u00e1",
         "descricao": "Uma latinha de refrigerante sabor Guaran\u00e1",
-        "preco": "3,5"
+        "preco": "3.5"
     },
     {
         "categoria": "Bebida",
         "url_img": "https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1988-refrigerante-coca-cola-lata-220ml.jpg?s=291868e7b3f73c84200ae8cd33a2227e",
         "nome": "Latinha de Refrigerante, Caju",
         "descricao": "Uma latinha de refrigerante sabor Caju",
-        "preco": "3,5"
+        "preco": "3.5"
     },
     {
         "categoria": "Bebida",
         "url_img": "https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1988-refrigerante-coca-cola-lata-220ml.jpg?s=291868e7b3f73c84200ae8cd33a2227e",
         "nome": "Latinha de Refrigerante, Coca-Cola Zero",
         "descricao": "Uma latinha de refrigerante sabor Coca-Cola Zero",
-        "preco": "3,5"
+        "preco": "3.5"
     },
     {
         "categoria": "Bebida",
@@ -172,35 +172,35 @@ export const produtosDados = [
         "url_img": "https://img.freepik.com/fotos-gratis/delicioso-copo-de-suco-de-laranja_144627-16581.jpg?size=626&ext=jpg&ga=GA1.1.1240599150.1710894416&semt=ais",
         "nome": "Copo de Suco de Acerola",
         "descricao": "Um copo de Suco de Acerola",
-        "preco": "3,5"
+        "preco": "3.5"
     },
     {
         "categoria": "Bebida",
         "url_img": "https://img.freepik.com/fotos-gratis/delicioso-copo-de-suco-de-laranja_144627-16581.jpg?size=626&ext=jpg&ga=GA1.1.1240599150.1710894416&semt=ais",
         "nome": "Copo de Suco de Caju",
         "descricao": "Um copo de Suco de Caj\u00e1",
-        "preco": "3,5"
+        "preco": "3.5"
     },
     {
         "categoria": "Bebida",
         "url_img": "https://img.freepik.com/fotos-gratis/delicioso-copo-de-suco-de-laranja_144627-16581.jpg?size=626&ext=jpg&ga=GA1.1.1240599150.1710894416&semt=ais",
         "nome": "Copo de Suco de Graviola",
         "descricao": "Um copo de Suco de Graviola",
-        "preco": "3,5"
+        "preco": "3.5"
     },
     {
         "categoria": "Bebida",
         "url_img": "https://img.freepik.com/fotos-gratis/delicioso-copo-de-suco-de-laranja_144627-16581.jpg?size=626&ext=jpg&ga=GA1.1.1240599150.1710894416&semt=ais",
         "nome": "Copo de Suco de Goiaba",
         "descricao": "Um copo de Suco de Goiaba",
-        "preco": "3,5"
+        "preco": "3.5"
     },
     {
         "categoria": "Bebida",
         "url_img": "https://img.freepik.com/fotos-gratis/delicioso-copo-de-suco-de-laranja_144627-16581.jpg?size=626&ext=jpg&ga=GA1.1.1240599150.1710894416&semt=ais",
         "nome": "Copo de Suco de Laranja",
         "descricao": "Um copo de Suco de Laranja",
-        "preco": "3,5"
+        "preco": "3.5"
     },
     {
         "categoria": "Lanches",
@@ -333,7 +333,7 @@ export const produtosDados = [
         "url_img": "https://praticadescartaveis.com.br/wp-content/uploads/2022/08/Copos-de-cafe%CC%81-descarta%CC%81veis-1080x675.jpg",
         "nome": "Copo de caf\u00e9 com leite",
         "descricao": "Um simples copo de caf\u00e9 com leite",
-        "preco": "1,5"
+        "preco": "1.5"
     },
     {
         "categoria": "Bebida",

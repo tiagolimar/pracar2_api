@@ -1,4 +1,5 @@
 import db from '../model/index.js';
+import { cadastrarProdutosPadrao } from './functions/index.js';
 import bcrypt from 'bcryptjs';
 
 import { gerarToken, gerarURL, gerarSenhaCaixa } from './functions/index.js';
@@ -6,6 +7,7 @@ import { gerarToken, gerarURL, gerarSenhaCaixa } from './functions/index.js';
 const Praca = db.praca;
 const Evento = db.evento;
 const Pagamentos = db.pagamentos;
+const Produtos = db.produto;
 
 export const pracaController = {
     cadastrar: async (request, response)=>{
@@ -28,7 +30,8 @@ export const pracaController = {
                     const { id } = dados;
                     await Promise.all([
                         Evento.create({praca:id}),
-                        Pagamentos.create({praca:id})
+                        Pagamentos.create({praca:id}),
+                        cadastrarProdutosPadrao(Produtos, id)
                     ]);
                     response.send(dados);
                 } catch (e) {

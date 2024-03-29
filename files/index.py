@@ -13,7 +13,9 @@ dados = []
 
 with open(caminho_csv, mode='r', encoding='utf-8') as csvfile:
     leitor = csv.DictReader(csvfile, delimiter=';')
-    for linha in leitor: dados.append(linha)
+    for linha in leitor: 
+        linha['preco'] = linha['preco'].replace(',','.')
+        dados.append(linha)
 
 dados_json = json.dumps(dados, indent=4)
 

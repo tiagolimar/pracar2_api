@@ -127,42 +127,42 @@ export const produtosDados = [
     },
     {
         "categoria": "Bebida",
-        "url_img": "https://d3gdr9n5lqb5z7.cloudfront.net/fotos/931476_mini.jpg",
+        "url_img": "https://img.irroba.com.br/filters:fill(fff):quality(80)/bebfesta/catalog/produtos/teste/coca-cola-beb-festa.jpg",
         "nome": "Refrigerante de 2L, Coca-Cola",
         "descricao": "Garrafa de 2 litros de refrigerante sabor Coca-Cola",
         "preco": "7"
     },
     {
         "categoria": "Bebida",
-        "url_img": "https://d3gdr9n5lqb5z7.cloudfront.net/fotos/931476_mini.jpg",
+        "url_img": "https://img.irroba.com.br/filters:fill(fff):quality(80)/bebfesta/catalog/produtos/teste/coca-cola-beb-festa.jpg",
         "nome": "Refrigerante de 2L, Fanta Uva",
         "descricao": "Garrafa de 2 litros de refrigerante sabor Fanta Uva",
         "preco": "7"
     },
     {
         "categoria": "Bebida",
-        "url_img": "https://d3gdr9n5lqb5z7.cloudfront.net/fotos/931476_mini.jpg",
+        "url_img": "https://img.irroba.com.br/filters:fill(fff):quality(80)/bebfesta/catalog/produtos/teste/coca-cola-beb-festa.jpg",
         "nome": "Refrigerante de 2L, Fanta Laranja",
         "descricao": "Garrafa de 2 litros de refrigerante sabor Fanta Laranja",
         "preco": "7"
     },
     {
         "categoria": "Bebida",
-        "url_img": "https://d3gdr9n5lqb5z7.cloudfront.net/fotos/931476_mini.jpg",
+        "url_img": "https://img.irroba.com.br/filters:fill(fff):quality(80)/bebfesta/catalog/produtos/teste/coca-cola-beb-festa.jpg",
         "nome": "Refrigerante de 2L, Guaran\u00e1",
         "descricao": "Garrafa de 2 litros de refrigerante sabor Guaran\u00e1",
         "preco": "7"
     },
     {
         "categoria": "Bebida",
-        "url_img": "https://d3gdr9n5lqb5z7.cloudfront.net/fotos/931476_mini.jpg",
+        "url_img": "https://img.irroba.com.br/filters:fill(fff):quality(80)/bebfesta/catalog/produtos/teste/coca-cola-beb-festa.jpg",
         "nome": "Refrigerante de 2L, Caju",
         "descricao": "Garrafa de 2 litros de refrigerante sabor Caju",
         "preco": "7"
     },
     {
         "categoria": "Bebida",
-        "url_img": "https://d3gdr9n5lqb5z7.cloudfront.net/fotos/931476_mini.jpg",
+        "url_img": "https://img.irroba.com.br/filters:fill(fff):quality(80)/bebfesta/catalog/produtos/teste/coca-cola-beb-festa.jpg",
         "nome": "Refrigerante de 2L, Coca-Cola Zero",
         "descricao": "Garrafa de 2 litros de refrigerante sabor Coca-Cola Zero",
         "preco": "7"

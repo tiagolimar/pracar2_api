@@ -6,9 +6,10 @@ import cors from "cors";
 
 export const app = express();
 
+const URL_ORIGIN = process.env.LOCAL ? "http://localhost:3000" : "https://pracar2.vercel.app";
+
 app.use(cors({
-    origin: "https://pracar2.vercel.app",
-    // origin: "http://localhost:3000",
+    origin: URL_ORIGIN,
     methods: "GET, POST, PATCH",
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
